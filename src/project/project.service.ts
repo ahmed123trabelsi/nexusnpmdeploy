@@ -46,7 +46,7 @@ export class ProjectService {
         await this.taskModel.deleteOne({},{ projectId: id});
         await this.userModel.updateMany(
           {}, // This empty filter matches all documents in the collection.
-          { $pull: { projects: del._id } } // Pull the deleted task's ID from the tasks array.
+          { $pull: { projects: del._id } } // Pull the deleted task's ID from the tasks arrayl.
         );
      return { message: 'PROJECT deleted and references removed' };
       }
